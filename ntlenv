@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Get rid of CPython path
+PATH=`echo $PATH | tr ':' '\n' | grep -iv cpython | tr '\n' ':'`
+CDPATH=`echo $CDPATH | tr ':' '\n' | grep -iv cpython | tr '\n' ':'`
+
+export NTL_HOME=`pwd`
+
+PATH=`echo $PATH | tr ':' '\n' | grep -v ntl-11.3.2 | tr '\n' ':'`
+CDPATH=`echo $CDPATH | tr ':' '\n' | grep -v ntl-11.3.2 | tr '\n' ':'`
+
+export PATH=$NTL_HOME:$PATH
+export CDPATH=$NTL_HOME:$CDPATH
+
+
